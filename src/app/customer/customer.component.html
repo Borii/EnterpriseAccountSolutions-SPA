@@ -1,0 +1,33 @@
+<div class="content-wrapper">
+  <mat-form-field class="example-form-field">
+    <mat-label>Filter...</mat-label>
+    <input matInput type="text" [(ngModel)]="filterText" (ngModelChange)="onFilterTextChange($event)">
+    <button mat-button *ngIf="filterText" matSuffix mat-icon-button aria-label="Clear" (click)="filterText=''">
+        <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <div fxLayout="row wrap" fxLayoutGap="0px" fxLayoutAlign="flex-start" class="cards">
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="33%" fxFlex.lg="25%" *ngFor="let item of allCustomers">
+      <mat-card class="example-card z-depth" (click)="onClickCustomer(item)" *ngIf="item.visible">
+        <mat-card-header>
+          <!-- <button *ngIf="!item.favorite" mat-card-avatar mat-icon-button (click)="onClickCustomer(item)" class="favorite-button"><mat-icon>star_border</mat-icon></button>
+          <button *ngIf="item.favorite" mat-card-avatar mat-icon-button (click)="onClickCustomer(item)" color="primary"><mat-icon>star</mat-icon></button> -->
+          <img mat-card-avatar mat-icon-button src="{{item.photograph}}" />
+          <mat-card-title style="overflow: hidden;">{{item.surname}}</mat-card-title>
+          <mat-card-subtitle>{{item.name}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            <mat-icon class="mat-icon-details">email</mat-icon>{{item.email}}
+            <br />          
+            <mat-icon class="mat-icon-details">phone</mat-icon>{{item.phone}}
+            <br />          
+
+            <mat-icon class="mat-icon-details">home</mat-icon>{{item.address}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

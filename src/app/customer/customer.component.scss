@@ -1,0 +1,35 @@
+.content-wrapper {
+    margin-top: 8px;
+    height: calc(100% - 8px);
+}
+
+.cards {
+    height: calc(100% - 120px);
+    overflow-y: scroll; /* Make the child scroll */
+    overflow-x: hidden;
+}
+
+.example-card {
+    margin: 12px;
+    overflow: hidden;
+}
+
+.example-form-field {
+    margin: 0 12px 0 12px;
+    width: calc(100% - 24px);
+}
+
+.z-depth {
+    cursor: pointer;
+}
+
+.z-depth:hover {
+    background-color: #f0f5ff;
+    box-shadow: 0px 0px 0px 4px rgba(0,50,200,.5) !important;
+    transform: translate3d(0,0,0);
+    transition: background-color 0.2s cubic-bezier(.25,.8,.25,1), box-shadow 0.2s cubic-bezier(.4,0,.2,1);
+}
+
+.mat-icon-details {
+    font-size: 12px;
+}

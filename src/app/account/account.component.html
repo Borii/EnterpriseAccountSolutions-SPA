@@ -1,0 +1,50 @@
+<div class="content-wrapper">
+  <div class="top-panel">
+  <div style="float:left">
+    <h1 class="header-surname">{{customer.name}}</h1>
+    <div class="header-name">{{customer.surname}}</div>
+    <p>Total Balance: {{customer.balance | number}}</p>
+    <p>Accounts: {{customer.accounts?.length || 0}}</p>
+  </div>
+
+  <mat-card style="float:right">
+    <p>Create Account:</p>
+    <form [formGroup]="accountForm" (submit)="submitAccount()">
+      <label for="accountName">Account Name:</label><br>
+      <input type="text" id="accountName" formControlName="accountName"><br>
+      <label for="initialDeposit">Initial Deposit:</label><br>
+      <input type="text" id="initialDeposit" formControlName="initialDeposit"><br><br>
+      <input type="submit">
+    </form> 
+</mat-card>
+</div>
+  
+
+  <mat-form-field class="example-form-field">
+    <mat-label>Filter...</mat-label>
+    <input matInput type="text" [(ngModel)]="filterText" (ngModelChange)="onFilterTextChange($event)">
+    <button mat-button *ngIf="filterText" matSuffix mat-icon-button aria-label="Clear" (click)="filterText=''">
+        <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <div fxLayout="row wrap" fxLayoutGap="0px" fxLayoutAlign="flex-start" class="cards">
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="33%" fxFlex.lg="25%" *ngFor="let item of allCustomers">
+      <mat-card class="example-card z-depth" (click)="onClickCustomer(item)" *ngIf="item.visible">
+        <mat-card-header>
+          <!-- <button *ngIf="!item.favorite" mat-card-avatar mat-icon-button (click)="onClickCustomer(item)" class="favorite-button"><mat-icon>star_border</mat-icon></button>
+          <button *ngIf="item.favorite" mat-card-avatar mat-icon-button (click)="onClickCustomer(item)" color="primary"><mat-icon>star</mat-icon></button> -->
+          <mat-icon mat-card-avatar mat-icon>account_balance</mat-icon>
+          <mat-card-title style="overflow: hidden;">{{item.name}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            <mat-icon class="mat-icon-details">list</mat-icon>{{item.transactions?.length || 0}} transaction
+            <br />          
+            <mat-icon class="mat-icon-details">attach_money</mat-icon>{{item.balance}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
