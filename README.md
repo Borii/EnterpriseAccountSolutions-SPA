@@ -4,14 +4,14 @@ https://github.com/Borii/EnterpriseAccountSolutions
 
 Prerequisites:
 Have EnterpriseAccountSolutions with AccountApi, TransactionApi and CustomerApi running.
+Either use `dotnet run` in command line, or start the executable.
 
-## Development server
+## How to run the solution
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Install Node.js
+In command line, Run `npm install`
+In command line, Run `ng serve` to host the application on `http://localhost:4200/`
+The app will automatically reload if you change any of the source files.
 
 ## Build
 
