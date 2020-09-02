@@ -1,6 +1,7 @@
 # EnterpriseAccountSolutions-SPA
 UI for EnterpriseAccountSolutions Api
 https://github.com/Borii/EnterpriseAccountSolutions
+Created in Angular 10 and running on Node.js
 
 Prerequisites:
 Have EnterpriseAccountSolutions with AccountApi, TransactionApi and CustomerApi running.
