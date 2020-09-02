@@ -3,9 +3,10 @@ UI for EnterpriseAccountSolutions Api
 https://github.com/Borii/EnterpriseAccountSolutions
 Created in Angular 10 and running on Node.js
 
-Prerequisites:
+## Prerequisites:
+
 Have EnterpriseAccountSolutions with AccountApi, TransactionApi and CustomerApi running.
-Either use `dotnet run` in command line, or start the executable.
+For details refer to readme in https://github.com/Borii/EnterpriseAccountSolutions
 
 ## How to run the solution
 
